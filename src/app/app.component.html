@@ -1,0 +1,30 @@
+<!-- index số thứ tự của item hiện tại 
+count độ dài của arr
+ first: true nếu như item đó là item đầu tiên
+last: ngược first 
+odd: lẻ
+ even: chẵn -->
+
+<ul>
+  <li
+    *ngFor="
+      let user of users;
+      index as idx;
+      count as total;
+      first as isFirst;
+      last as isLast;
+      even as isEven;
+      odd as isOdd
+    "
+  >
+    <span>{{ user.name }} - {{ user.id }} - {{ user.phone }}</span>
+    <br />
+    <br />
+    <span>at index {{ idx }} out of {{ total }}</span>
+    <br />
+    <span *ngIf="isEven"> I am Even number</span>
+    <span *ngIf="isOdd"> I am Odd number</span>
+    <span *ngIf="isFirst"> I am first</span>
+    <span *ngIf="isLast"> I am last</span>
+  </li>
+</ul>
